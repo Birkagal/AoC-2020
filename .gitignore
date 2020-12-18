@@ -131,3 +131,4 @@ dmypy.json
 # Custom preference
 /src/__pycache__
 /src/.vscode
+/inputs
