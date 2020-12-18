@@ -1,62 +1,41 @@
+from functools import lru_cache
+
 ''' 
 Part One - What is the number of 1-jolt differences multiplied by the number of 3-jolt differences?
 Part Two - What is the total number of distinct ways you can arrange the adapters to connect the charging outlet to your device?
 '''
 
 
-def insert_adapters_into_list(data):
-    adapters = []
-    for adapter in data:
-        adapters.append(int(adapter))
-    adapters.sort()
-    adapters.append(int(data[-1])+3)
-    return adapters
-
-
 def partOne(content):
-    adapters = insert_adapters_into_list(content)
-    one_diff = []
-    two_diff = []
-    tree_diff = []
-    current_jolts = 0
-    for adapter in adapters:
-        if adapter - 1 == current_jolts:
-            one_diff.append(adapter)
-        elif adapter - 2 == current_jolts:
-            two_diff.append(adapter)
-        elif adapter - 3 == current_jolts:
-            tree_diff.append(adapter)
-        current_jolts = adapter
-    tree_diff.append(adapters[-1]+3)
-    return len(one_diff) * len(tree_diff)
+    adapters = sorted([int(adapter) for adapter in content])
+    adapters.append(int(content[-1])+3)
+    diff1 = diff3 = 1
+    for current, nxt in zip(adapters, adapters[1:]):
+        diff = nxt - current
+        if diff == 1:
+            diff1 += 1
+        if diff == 3:
+            diff3 += 1
+    return diff1*diff3
 
 
-def partTwo(data):
-    data = insert_adapters_into_list(data)
-
-    arr = [int(line) for line in data]
-    arr.sort()
-    arr.append(arr[-1]+3)
-
-    memo = {0: 1}
-    for r in arr:
-        memo[r] = memo.get(r-3, 0) \
-            + memo.get(r-2, 0) \
-            + memo.get(r-1, 0)
-    return memo[arr[-1]]
+def partTwo(content):
+    adapters = sorted([int(adapter) for adapter in content])
+    adapters = [0] + adapters + [max(adapters)+3]
+    return solve_with_cache(adapters, 0)
 
 
-def run_the_array(adapters, current_jolts, path, index):
-    total = 0
-    for adapter in adapters:
-        if adapter - 1 == current_jolts:
-            path.append(adapter)
-            total += run_the_array(adapters[index:], adapter, path, index)
-        elif adapter - 2 == current_jolts:
-            path.append(adapter)
-            total += run_the_array(adapters[index:], adapter, path, index)
-        elif adapter - 3 == current_jolts:
-            path.append(adapter)
-            total += run_the_array(adapters[index:], adapter, path, index)
-        current_jolts = adapter
-        index += 1
+def solve_with_cache(adapters, index):
+    # Decorate using lru_cache() without the first parameter
+    @lru_cache()
+    def find_all_possibles_from(index):
+        nonlocal adapters
+        if index == len(adapters) - 1:
+            return 1
+        tot = 0
+        for j in range(index + 1, min(index + 4, len(adapters))):
+            if adapters[j] - adapters[index] <= 3:
+                tot += find_all_possibles_from(j)
+        return tot
+    # Do the actual initial call passing only the second parameter
+    return find_all_possibles_from(index)
