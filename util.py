@@ -1,8 +1,27 @@
 import requests
 import os
+import timeit
+import importlib
 from dotenv import load_dotenv
 
+
 load_dotenv()
+
+
+def import_lib(name):
+    return importlib.import_module(f'src.{name}')
+
+
+def start_clock():
+    return timeit.default_timer()
+
+
+def stop_clock(start_time):
+    return format_time(float(timeit.default_timer()) - float(start_time))
+
+
+def format_time(time):
+    return '{0:.5f}'.format(time)
 
 
 def get_input_from_web(day):
