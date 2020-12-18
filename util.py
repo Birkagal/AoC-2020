@@ -8,20 +8,23 @@ from dotenv import load_dotenv
 load_dotenv()
 
 
-def import_lib(name):
-    return importlib.import_module(f'src.{name}')
+def get_day_output():
+    DAY = int(input("Enter day to solve: "))
+    content = get_input(DAY)
+    module = importlib.import_module(f'src.{DAY}')
+    start_time = timeit.default_timer()
+    partOne = getattr(module, 'partOne')(content)
+    p1_time = stop_clock(start_time)
+    partTwo = getattr(module, 'partTwo')(content)
+    p2_time = stop_clock(p1_time)
+    return (partOne, p1_time, partTwo, p2_time)
 
 
-def start_clock():
-    return timeit.default_timer()
-
-
-def stop_clock(start_time):
-    return format_time(float(timeit.default_timer()) - float(start_time))
-
-
-def format_time(time):
-    return '{0:.5f}'.format(time)
+def get_input(day):
+    file_path = f'./inputs/{day}.txt'
+    if not os.path.isfile(file_path):
+        get_input_from_web(day)
+    return [x.rstrip() for x in open(file_path)]
 
 
 def get_input_from_web(day):
@@ -33,8 +36,5 @@ def get_input_from_web(day):
         f.write(response.content.decode('utf-8'))
 
 
-def get_input(day):
-    file_path = f'./inputs/{day}.txt'
-    if not os.path.isfile(file_path):
-        get_input_from_web(day)
-    return [x.rstrip() for x in open(file_path)]
+def stop_clock(start_time):
+    return '{0:.5f}'.format(timeit.default_timer() - float(start_time))
