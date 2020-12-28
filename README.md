@@ -6,4 +6,4 @@ I had a lot of fun, and I surley learned A LOT!
 <br /> 
 ### [Click here](https://adventofcode.com/2020) to go to Advent Of Code website to check it for yourself!
  <br /> 
-![aoc](https://i.ibb.co/mbcVBq8/160be980-3b1a-11eb-9dbe-439a40adfa99.png)
+![aoc](https://i.ibb.co/TLtM6Nn/160be980-3b1a-11eb-9dbe-439a40adfa99.jpg)
