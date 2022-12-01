@@ -1,9 +1,10 @@
-# 🎄Advent Of Code 2020🎄
+# 🎄Advent Of Code🎄
 Advent of Code is an Advent calendar of small programming puzzles for a variety of skill sets and skill levels that can be solved in any programming language you like.
 <br /> 
-This is my first time solving AoC, and I chose to solve this year puzzles using Python to learn more and get some experience with it. I had a lot of fun, and I surely learned A LOT!
+I started solving AoC in 2020, and after missing last year challanges I'm back again at it in 2022.
+I'm still solving the challanges using Python.
 <br /> 
-### [Click here](https://adventofcode.com/2020) to check Advent Of Code website yourself!
+### [Click here](https://adventofcode.com) to check Advent Of Code website yourself!
 ![aoc](https://i.ibb.co/TLtM6Nn/160be980-3b1a-11eb-9dbe-439a40adfa99.jpg)
 
 
