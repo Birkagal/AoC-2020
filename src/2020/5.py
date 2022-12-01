@@ -5,12 +5,12 @@ Part Two - What is the ID of your seat?
 '''
 
 
-def partOne(content):
+def part_one(content):
     ids = calculate_ids(content)
     return max(ids)
 
 
-def partTwo(content):
+def part_two(content):
     ids = calculate_ids(content)
     return [x for x in range(ids[0], ids[-1]+1) if x not in ids][0]
 

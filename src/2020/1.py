@@ -4,7 +4,7 @@ Part Two - what is the product of the three entries that sum to 2020?
 '''
 
 
-def partOne(numbers):
+def part_one(numbers):
     numbers = sorted([int(number) for number in numbers])
     for i in range(len(numbers)):
         for j in range(i, len(numbers)):
@@ -12,7 +12,7 @@ def partOne(numbers):
                 return numbers[i]*numbers[j]
 
 
-def partTwo(numbers):
+def part_two(numbers):
     numbers = sorted([int(number) for number in numbers])
     for i in range(len(numbers)):
         for j in range(i, len(numbers)):

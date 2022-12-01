@@ -59,13 +59,13 @@ def recursive_combat(p1_deck, p2_deck):
     return (True, p1_deck) if p1_deck else (False, p2_deck)
 
 
-def partOne(content):
+def part_one(content):
     p1_deck, p2_deck = parse_data(content)
     winner_deck = play_combat(p1_deck, p2_deck)
     return sum([(i+1)*card for i, card in enumerate(winner_deck[::-1])])
 
 
-def partTwo(content):
+def part_two(content):
     p1_deck, p2_deck = parse_data(content)
     _, winner_deck = recursive_combat(p1_deck, p2_deck)
     return sum([(i+1)*card for i, card in enumerate(winner_deck[::-1])])

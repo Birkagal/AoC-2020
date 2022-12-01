@@ -63,14 +63,14 @@ def find_corrent_ingredients(possible_aller):
     return assigned
 
 
-def partOne(content):
+def part_one(content):
     recipes, possible_allergens, recipe_with_allergen = parse_data(content)
     safe_ingredients = find_safe_ingredients(
         recipes, possible_allergens, recipe_with_allergen)
     return sum(ingr in r for r in recipes for ingr in safe_ingredients)
 
 
-def partTwo(content):
+def part_two(content):
     recipes, possible_allergens, recipe_with_allergen = parse_data(content)
     safe_ingredients = find_safe_ingredients(
         recipes, possible_allergens, recipe_with_allergen)

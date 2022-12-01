@@ -32,7 +32,7 @@ def first_count_neighbors(grid, row, col):
     return total
 
 
-def partOne(content):
+def part_one(content):
     state = [list(line) for line in content]
     grid = deepcopy(state)
 
@@ -43,7 +43,7 @@ def partOne(content):
     return sum(row.count('#') for row in state)
 
 
-def partTwo(content):
+def part_two(content):
     state = [list(line) for line in content]
     next_state = second_play_turn(state)
     while state != next_state:

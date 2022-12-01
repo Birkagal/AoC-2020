@@ -38,7 +38,7 @@ def cycle_cube_3d(cube):
     return next_cycle
 
 
-def partOne(content):
+def part_one(content):
     cube = set()
     for x, row in enumerate(content):
         for y, cell in enumerate(row):
@@ -89,7 +89,7 @@ def cycle_cube_4d(cube):
     return next_cycle
 
 
-def partTwo(content):
+def part_two(content):
     cube = set()
     for x, row in enumerate(content):
         for y, cell in enumerate(row):

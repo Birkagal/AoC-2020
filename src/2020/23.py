@@ -46,7 +46,7 @@ def create_next_list(cups, size):
     return next_cup
 
 
-def partOne(content):
+def part_one(content):
     cups = [int(num) for num in content[0]]
     next_cup = create_next_list(cups, 10)
     play_game(next_cup, cups[0], 100)
@@ -59,7 +59,7 @@ def partOne(content):
     return ans
 
 
-def partTwo(content):
+def part_two(content):
     cups = [int(num) for num in content[0]]
     next_cup = create_next_list(cups, 1000000)
     play_game(next_cup, cups[0], 10000000)

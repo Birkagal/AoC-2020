@@ -67,7 +67,7 @@ def play_turn(grid):
     return new_state
 
 
-def partOne(content):
+def part_one(content):
     all_moves = parse_data(content)
     black_hex_in_grid = set()
 
@@ -80,7 +80,7 @@ def partOne(content):
     return len(black_hex_in_grid)
 
 
-def partTwo(content):
+def part_two(content):
     all_moves = parse_data(content)
     grid = set()
     for moves in all_moves:

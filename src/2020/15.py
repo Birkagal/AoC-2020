@@ -4,7 +4,7 @@ Part Two - what will be the 30000000th number spoken?
 '''
 
 
-def partOne(content):
+def part_one(content):
     memory = {int(value): [turn+1]
               for turn, value in enumerate(content[0].split(','))}
     last_num = int(content[0].split(',')[-1])
@@ -24,7 +24,7 @@ def partOne(content):
     return last_num
 
 
-def partTwo(content):
+def part_two(content):
     content = content[0].split(',')
     memory = [0] * 30000000
     last_num = int(content[-1])

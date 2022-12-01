@@ -59,9 +59,9 @@ def evaluate(mode, expression):
     return values[0]
 
 
-def partOne(content):
+def part_one(content):
     return sum([evaluate(1, expression) for expression in content])
 
 
-def partTwo(content):
+def part_two(content):
     return sum([evaluate(2, expression) for expression in content])

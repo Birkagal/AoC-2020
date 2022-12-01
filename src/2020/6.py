@@ -4,7 +4,7 @@ Part Two - For each group, count the number of questions to which everyone answe
 '''
 
 
-def partOne(content):
+def part_one(content):
     answers = []
     group_answer = set()
     groups = split_text(content)
@@ -17,7 +17,7 @@ def partOne(content):
     return sum(answers)
 
 
-def partTwo(content):
+def part_two(content):
     groups = split_text(content)
     first_person_answer = []
     group_answer = []

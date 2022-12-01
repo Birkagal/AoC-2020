@@ -4,7 +4,7 @@ Part Two - How many passwords are valid according to the new interpretation of t
 '''
 
 
-def partOne(content):
+def part_one(content):
     regex = "-+:"
     low, high = 0, 0
     digit = ''
@@ -22,7 +22,7 @@ def partOne(content):
     return total_passwords
 
 
-def partTwo(content):
+def part_two(content):
     regex = "-+:"
     first, second = 0, 0
     digit = ''

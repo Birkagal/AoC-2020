@@ -5,7 +5,7 @@ Part Two - Execute the initialization program using an emulator for a version 2 
 '''
 
 
-def partOne(content):
+def part_one(content):
     mem = dict()
     for line in content:
         if 'mask' in line:
@@ -17,7 +17,7 @@ def partOne(content):
     return reduce(lambda a, b: a+(b if b != 0 else 0), list(mem.values()))
 
 
-def partTwo(content):
+def part_two(content):
     mem = dict()
     for line in content:
         if 'mask' in line:

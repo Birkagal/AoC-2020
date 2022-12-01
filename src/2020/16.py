@@ -41,7 +41,7 @@ def validate_number(value, constraints):
     return False
 
 
-def partOne(content):
+def part_one(content):
     constraints, my_ticket, tickets_data = parse_data(content)
     return sum(sum([[number for number in ticket if not validate_number(
         number, constraints)] for ticket in tickets_data], []))
@@ -64,7 +64,7 @@ def get_corrent_indexes(possible):
     return found
 
 
-def partTwo(content):
+def part_two(content):
     constraints, my_ticket, tickets = parse_data(content)
     tickets.append(my_ticket)
     num_of_field = len(my_ticket)

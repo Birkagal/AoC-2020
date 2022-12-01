@@ -4,7 +4,7 @@ Part Two - How many individual bags are required inside your single shiny gold b
 '''
 
 
-def partOne(content):
+def part_one(content):
     bags_dict = put_bags_in_dict(content)
     keys_with_shiny_gold = check_for_bag(bags_dict, 'shiny gold')
     queue = []
@@ -67,7 +67,7 @@ def split(txt, seps):
     return [i.strip() for i in txt.split(default_sep)]
 
 
-def partTwo(content):
+def part_two(content):
     bags_dict = put_bags_in_dict_with_numbers(content)
     return go_inside_bag(bags_dict, 'shiny gold')
 

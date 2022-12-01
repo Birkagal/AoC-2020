@@ -161,13 +161,13 @@ def count_pattern(image, pattern):
             return n
 
 
-def partOne(content):
+def part_one(content):
     tiles = parse_data(content)
     corner_tiles = find_correct_tiles(tiles)
     return prod(corner_tiles)
 
 
-def partTwo(content):
+def part_two(content):
     tiles = parse_data(content)
     corner_tiles = find_correct_tiles(tiles)
     top_left_id, matching_sides = corner_tiles.popitem()

@@ -6,7 +6,7 @@ Part Two - What is the total number of distinct ways you can arrange the adapter
 '''
 
 
-def partOne(content):
+def part_one(content):
     adapters = sorted([int(adapter) for adapter in content])
     adapters.append(int(content[-1])+3)
     diff1 = diff3 = 1
@@ -19,7 +19,7 @@ def partOne(content):
     return diff1*diff3
 
 
-def partTwo(content):
+def part_two(content):
     adapters = sorted([int(adapter) for adapter in content])
     adapters = [0] + adapters + [max(adapters)+3]
     return solve_with_cache(adapters, 0)

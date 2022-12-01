@@ -14,7 +14,7 @@ def parse_content(content):
     return directions
 
 
-def partOne(content):
+def part_one(content):
     directions = parse_content(content)
     nesw = [0, 0, 0, 0]
     current_position = 1
@@ -38,7 +38,7 @@ def partOne(content):
     return abs(nesw[1]-nesw[3]) + abs(nesw[2]-nesw[0])
 
 
-def partTwo(content):
+def part_two(content):
     directions = parse_content(content)
     nesw = [0, 0, 0, 0]
     waypoint = [1, 10, 0, 0]

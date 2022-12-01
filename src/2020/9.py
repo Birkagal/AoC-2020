@@ -30,11 +30,11 @@ def find_invalid_number(data, preamble_length):
     return -1
 
 
-def partOne(content):
+def part_one(content):
     return find_invalid_number(content, 25)
 
 
-def partTwo(content):
+def part_two(content):
     invalid_number = find_invalid_number(content, 25)
     sum_lst = []
     total_goal = invalid_number

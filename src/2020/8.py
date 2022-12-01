@@ -25,11 +25,11 @@ def run_the_program(instructions):
             current_instruction += int(instruction[1])
 
 
-def partOne(content):
+def part_one(content):
     return run_the_program(content)[0]
 
 
-def partTwo(content):
+def part_two(content):
     instrucions = content
     current_line = 0
     finished = False

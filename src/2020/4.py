@@ -4,7 +4,7 @@ Part Two - how many passports are valid? those that have all required fields and
 '''
 
 
-def partOne(content):
+def part_one(content):
     credentials = []
     single_credential = ""
     valid_passports = 0
@@ -28,7 +28,7 @@ def partOne(content):
     return valid_passports
 
 
-def partTwo(content):
+def part_two(content):
     credentials = []
     single_credential = ""
     valid_passports = 0

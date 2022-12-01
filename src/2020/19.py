@@ -68,7 +68,7 @@ def build_regexp_recursive(rules, rule=0):
     return '(' + '|'.join(options) + ')'
 
 
-def partOne(content):
+def part_one(content):
     rules = parse_input(content)
     regex = build_regexp(rules)
     rexp = re.compile('^' + regex + '$')
@@ -84,7 +84,7 @@ def partOne(content):
     return valid
 
 
-def partTwo(content):
+def part_two(content):
     rules = parse_input(content)
     regex = build_regexp_recursive(rules)
     rexp = re.compile('^' + regex + '$')

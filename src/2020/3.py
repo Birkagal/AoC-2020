@@ -4,11 +4,11 @@ Part Two - What do you get if you multiply together the number of trees encounte
 '''
 
 
-def partOne(content):
+def part_one(content):
     return traverse_map(content, 3, 1)
 
 
-def partTwo(content):
+def part_two(content):
     return traverse_map(content, 1, 1)*traverse_map(content, 3, 1)*traverse_map(content, 5, 1)*traverse_map(content, 7, 1)*traverse_map(content, 1, 2)
 
 

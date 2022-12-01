@@ -3,7 +3,7 @@ Part One - What encryption key is the handshake trying to establish?
 '''
 
 
-def partOne(content):
+def part_one(content):
     first_pkey = int(content[0])
     second_pkey = int(content[1])
 
@@ -21,5 +21,5 @@ def partOne(content):
     return enc_key
 
 
-def partTwo(content):
+def part_two(content):
     pass

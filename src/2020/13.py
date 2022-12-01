@@ -5,7 +5,7 @@ Part Two - What is the earliest timestamp such that all of the listed bus IDs de
 '''
 
 
-def partOne(content):
+def part_one(content):
     estimate_time = int(content[0])
     bus_list = [int(bus_id)
                 for bus_id in content[1].split(',') if bus_id != 'x']
@@ -44,7 +44,7 @@ def chinese_remainder(n, a):
     return sum % prod
 
 
-def partTwo(content):
+def part_two(content):
     buses = [(i, int(bus))
              for i, bus in enumerate(content[1].split(',')) if bus != 'x']
     dividers = [bus for _, bus in buses]
