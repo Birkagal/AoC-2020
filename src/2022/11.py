@@ -77,7 +77,7 @@ def part_one(input):
         monkeys_items.append(monkey['items'])
         monkeys_inspections.append(0)
 
-    supermod = math.prod([monkey['test'] for monkey in monkeys])
+    supermod = math.lcm(*(monkey['test'] for monkey in monkeys))
 
     for _ in range(20):
         for i, monkey in enumerate(monkeys):
@@ -97,7 +97,7 @@ def part_two(input):
         monkeys_items.append(monkey['items'])
         monkeys_inspections.append(0)
 
-    supermod = math.prod([monkey['test'] for monkey in monkeys])
+    supermod = math.lcm(*(monkey['test'] for monkey in monkeys))
 
     for _ in range(10000):
         for i, monkey in enumerate(monkeys):
