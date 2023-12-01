@@ -14,3 +14,6 @@ downloads/
 # Custom preference
 /inputs
 .vscode/
+
+# MacOS stuff
+.DS_Store
